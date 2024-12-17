@@ -1,0 +1,18 @@
+version: 4.1.30
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Locate the estimated delivery information section.
+    commands:
+      - command: hover-text
+        text: Estimated delivery by 24th Dec 2024!
+        description: estimated delivery information section
+        action: hover
+  - prompt: >-
+      Assert that the estimated delivery date is displayed and formatted
+      correctly.  # Use the content of the file from the environment
+    commands:
+      - command: assert
+        expect: Estimated delivery by 24th Dec 2024! is displayed correctly
