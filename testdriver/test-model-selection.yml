@@ -1,0 +1,18 @@
+version: 4.1.30
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Select a model variant from the available options.
+    commands:
+      - command: hover-text
+        text: OLA S1 Air
+        description: model variant option
+        action: click
+  - prompt: >-
+      Assert that the details of the selected model are updated correctly on the
+      page.  # Use the content of the file from the environment
+    commands:
+      - command: assert
+        expect: CERTIFIED RANGE 151 km and TOP SPEED 90 km/h are visible
